@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "belajar-app",
+    "name": "belajar app",
     "slug": "belajar-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.belajarapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b134aa66-b73b-43a3-9636-10395fb47dcc"
+      }
     }
   }
 }
