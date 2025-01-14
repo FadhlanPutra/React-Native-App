@@ -1,110 +1,185 @@
-import { StyleSheet, Image, Platform, SafeAreaView, View, Text, Button } from 'react-native';
+import { Image, Linking, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+// import { Collapsible } from '@/components/Collapsible';
+// import { ExternalLink } from '@/components/ExternalLink';
+// import ParallaxScrollView from '@/components/ParallaxScrollView';
+// import { ThemedText } from '@/components/ThemedText';
+// import { ThemedView } from '@/components/ThemedView';
+// import { IconSymbol } from '@/components/ui/IconSymbol';
+import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import { Entypo, Foundation } from '@expo/vector-icons';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 // import { createIconSet } from 'react-native-vector-icons';
+import { Link } from 'expo-router';
+import { ScrollView } from 'react-native-gesture-handler';
+import tw from "twrnc";
+import { FullWindowOverlay } from 'react-native-screens';
 
 const packageJson = require('../../package.json');
-// const version = packageJson.version || 'Versi tidak ditemukan';
+const version = packageJson.version || 'Versi tidak ditemukan';
 
 export default function TabTwoScreen() {
   return (
+    
 
-    <SafeAreaView>
-      <View style={styles.view}>
-        <Image source={require('../../assets/images/qq.jpg')} style={styles.reactLogo}/>
-        <View style={{marginLeft: 10, flex: 1}}>
-          <Text style={styles.text}>Rasi Bintang </Text>
-          <Text style={styles.text}>Kopi</Text>
-        </View>
-        <Text style={styles.ubah}>Ubah</Text>
+
+    // <View style={styles.view}>
+    //   <Image source={require('../../assets/images/kurangInpo.jpg')} style={styles.reactLogo}/>
+    //   <View style={{marginLeft: 10, flex: 1}}>
+    //   <Text style={styles.text}>Rasi Bintang </Text>
+    //   <Text style={styles.text}>Kopi</Text>
+    //   </View>
+    //   <Text style={styles.ubah}>Ubah</Text>
+    //   </View>
+      
+    //   <View style={{marginHorizontal:35}}>
+    //   <Text style={styles.judulDetail}>Statistik</Text>
+    //   <View>
+    //   <View style={{flexDirection:'row', justifyContent:'space-between',  marginTop:10}}>
+    //   <View style={{flexDirection:'row', alignItems:'center'}}>
+    //   <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
+    //   <Entypo name='open-book' size={30} color={'white'} style={{alignItems:'center'}}/>
+    //   </View>
+    //   <View style={{marginLeft:10}}>
+    //   <Text>10</Text>
+    //   <Text>Lesson</Text>
+    //   </View>
+    //   </View>
+      
+    //   <View style={{flexDirection:'row', alignItems:'center'}}>
+    //   <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
+    //   <Entypo name='flash' size={30} color={'white'} style={{alignItems:'center'}}/>
+    //   </View>
+    //   <View style={{marginLeft:10}}>
+    //   <Text>20</Text>
+    //   <Text>Streak</Text>
+    //   </View>
+    //   </View>
+    //   </View>
+    //   </View>
+      
+    //   <View>
+    //   <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:10}}>
+    //   <View style={{flexDirection:'row', alignItems:'center'}}>
+    //   <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
+    //   <Entypo name='star-outlined' size={30} color={'white'} style={{alignItems:'center'}}/>
+    //   </View>
+    //   <View style={{marginLeft:10}}>
+    //   <Text>120</Text>
+    //   <Text>XP</Text>
+    //   </View>
+    //   </View>
+      
+    //         <View style={{flexDirection:'row', alignItems:'center'}}>
+    //         <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
+    //         <Foundation name='target' size={30} color={'white'} style={{alignItems:'center'}}/>
+    //         </View>
+    //         <View style={{marginLeft:10}}>
+    //         <Text>70%</Text>
+    //         <Text>Akurasi</Text>
+    //         </View>
+    //         </View>
+    //         </View>
+    //         </View>
+            
+    //         <Text style={styles.judulDetail}>Akun</Text>
+    //         <View style={styles.detailView}>
+    //         <Text style={styles.detail}>Detail Bisnis</Text>
+    //       <Text>&gt;</Text>
+    //       </View>
+    //       <View style={styles.detailView}>
+    //       <Text style={styles.detail}>Ubah Kata Sandi</Text>
+    //       <Text>&gt;</Text>
+    //       </View>
+          
+    //       <Text style={styles.judulDetail}>Tentang</Text>
+    //       <View style={styles.detailView}>
+    //       <Text style={styles.detail}>Keuntungan Belanja di Saraya</Text>
+    //       <Text>&gt;</Text>
+    //       </View>
+    //       <View style={styles.detailView}>
+    //       <Text style={styles.detail}>Syarat dan Ketentuan</Text>
+    //       <Text>&gt;</Text>
+    //       </View>
+    //       <View style={styles.detailView}>
+    //       <Text style={styles.detail}>Kebijakan Privasi</Text>
+    //       <Text>&gt;</Text>
+    //       </View>
+    //       </View>
+
+    
+    
+    
+    
+<GestureHandlerRootView>
+  
+<SafeAreaView>
+  <ScrollView>
+
+    <Text style={tw`text-bold text-3xl mt-6 ml-3`}>&lt;</Text>
+    <View style={tw`justify-center items-center`}>
+
+      <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`rounded-full w-50 h-50 my-10`}/>
+
+      <Text style={tw`font-extrabold text-3xl`}>Rasi Bintang</Text>
+      <Text style={tw`text-gray-500 text-xl`}>Perakit Roket NASA | Harian <AntDesign name='checkcircleo' color='blue'/></Text>
+
+      <View style={tw`flex flex-row gap-3 my-5`}>
+        <Link style={tw`bg-gray-300 p-2 rounded-2xl `} href="https://dribbble.com"><AntDesign size={24} color={'red'} name='dribbble' /></Link>
+        <Link style={tw`bg-gray-300 p-2 rounded-2xl `} href="https://github.com/FadhlanPutra"><AntDesign size={24} name='github' /></Link>
+        <Link style={tw`bg-gray-300 p-2 rounded-2xl `} href="https://instagram.com/fadhlanputra721"><AntDesign size={24} color={'#E1306C'} name='instagram' /></Link>
+        <Link style={tw`bg-gray-300 p-2 rounded-2xl `} href="https://linkedin.com"><AntDesign size={24} color={'blue'} name='linkedin-square' /></Link>
       </View>
 
-      <View style={{marginHorizontal:35}}>
-        <Text style={styles.judulDetail}>Statistik</Text>
-        <View>
-          <View style={{flexDirection:'row', justifyContent:'space-between',  marginTop:10}}>
-            <View style={{flexDirection:'row', alignItems:'center'}}>
-            <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
-              <Entypo name='open-book' size={30} color={'white'} style={{alignItems:'center'}}/>
-            </View>
-            <View style={{marginLeft:10}}>
-              <Text>10</Text>
-              <Text>Lesson</Text>
-            </View>
-            </View>
+      <View style={tw`flex-row gap-18`}>
+        <Text style={tw`font-extrabold text-2xl mr-1`}>542</Text>
+        <Text style={tw`font-extrabold text-2xl`}>98K</Text>
+        <Text style={tw`font-extrabold text-2xl`}>100K</Text>
+      </View>
 
-            <View style={{flexDirection:'row', alignItems:'center'}}>
-            <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
-              <Entypo name='flash' size={30} color={'white'} style={{alignItems:'center'}}/>
+      <View style={tw`flex-row gap-12`}>
+        <Text style={tw`text-xl`}>Posts</Text>
+        <Text style={tw`text-xl ml-3`}>Followers</Text>
+        <Text style={tw`text-xl ml-1`}>Following</Text>
+      </View>
+
+      <View style={tw`flex-row gap-5`}>
+        <Link href="/settings/projects" style={tw`border-2 border-blue-500 p-4 rounded w-35 my-8`}>
+          <Text style={tw`text-blue-500 font-bold text-center text-lg`}>Projects</Text>
+        </Link>
+
+        <Link href="/settings/siswa" style={tw`bg-blue-500 p-4 rounded w-35 my-8`}>
+          <Text style={tw`text-white font-bold text-center text-lg`}>Siswa</Text>
+        </Link>
+      </View>
+
+      <View style={tw`flex-row flex-wrap gap-y-5 w-full justify-between mt-3`}>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
             </View>
-            <View style={{marginLeft:10}}>
-              <Text>20</Text>
-              <Text>Streak</Text>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
             </View>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
+            </View>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
+            </View>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
+            </View>
+            <View style={tw`basis-[30%]`}>
+              <Image source={require('../../assets/images/kurangInpo.jpg')} style={tw`w-full h-30`}/>
             </View>
           </View>
-        </View>
 
-        <View>
-          <View style={{flexDirection:'row', justifyContent:'space-between', marginTop:10}}>
-          <View style={{flexDirection:'row', alignItems:'center'}}>
-            <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
-              <Entypo name='star-outlined' size={30} color={'white'} style={{alignItems:'center'}}/>
-            </View>
-            <View style={{marginLeft:10}}>
-              <Text>120</Text>
-              <Text>XP</Text>
-            </View>
-            </View>
-
-            <View style={{flexDirection:'row', alignItems:'center'}}>
-            <View style={{padding: 20, backgroundColor: 'red', borderRadius: 100, width: 70, height: 70}}>
-              <Foundation name='target' size={30} color={'white'} style={{alignItems:'center'}}/>
-            </View>
-            <View style={{marginLeft:10}}>
-              <Text>70%</Text>
-              <Text>Akurasi</Text>
-            </View>
-            </View>
-          </View>
-        </View>
-
-        <Text style={styles.judulDetail}>Akun</Text>
-        <View style={styles.detailView}>
-          <Text style={styles.detail}>Detail Bisnis</Text>
-          <Text>&gt;</Text>
-        </View>
-        <View style={styles.detailView}>
-          <Text style={styles.detail}>Ubah Kata Sandi</Text>
-          <Text>&gt;</Text>
-        </View>
-
-        <Text style={styles.judulDetail}>Tentang</Text>
-        <View style={styles.detailView}>
-          <Text style={styles.detail}>Keuntungan Belanja di Saraya</Text>
-          <Text>&gt;</Text>
-        </View>
-        <View style={styles.detailView}>
-          <Text style={styles.detail}>Syarat dan Ketentuan</Text>
-          <Text>&gt;</Text>
-        </View>
-        <View style={styles.detailView}>
-          <Text style={styles.detail}>Kebijakan Privasi</Text>
-          <Text>&gt;</Text>
-        </View>
+      <Text style={tw`my-5`}>Versi APP: {packageJson.version}</Text>
     </View>
 
-    <Text style={{fontSize:10, fontWeight:'light', color:'grey', textAlign:'center'}}>Versi APP: {packageJson.version}</Text>
-
-    </SafeAreaView>
-
+  </ScrollView>
+</SafeAreaView>
+</GestureHandlerRootView>
     // <ParallaxScrollView
     //   headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
     //   headerImage={

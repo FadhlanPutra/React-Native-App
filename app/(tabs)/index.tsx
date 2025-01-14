@@ -1,26 +1,94 @@
-import { Image, StyleSheet, Platform, View, Text, TextInput, Button } from 'react-native';
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import tw from "twrnc";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+// import { HelloWave } from '@/components/HelloWave';
+// import ParallaxScrollView from '@/components/ParallaxScrollView';
+// import { ThemedText } from '@/components/ThemedText';
+// import { ThemedView } from '@/components/ThemedView';
+import { Entypo } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+
+// const openWebsite = () => {
+//   const url = 'https://github.com/fadhlanputra'; // Ganti dengan URL tujuan Anda
+//   Linking.openURL(url).catch((err) =>
+//     console.error('Failed to open URL:', err)
+//   );
+// };
+
 
 export default function HomeScreen() {
   return (
-
+    
     <SafeAreaView>
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Image source={require('../../assets/images/qq.jpg')} style={styles.reactLogo}/>
-        <Text style={{textAlign: 'center', fontSize: 24, fontWeight: 'bold',}}>hehe</Text>
-        <Text style={{textAlign: 'center', fontSize: 19, marginTop: 10, color: 'grey'}}> "Hi mi nem is Fadhlan Putra, ai em manusia, ai em a perogramer, ai em pelajar, ai em pelaying gem, ai em kurang ingpo aku kang 😂😂"</Text>
-        <TextInput placeholder='isi pin atm' style={{borderWidth: 1, marginBottom: 20, marginTop: 20,}}></TextInput>
-        <Button
-          title="Submit"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      </View>
+      <ScrollView>
+        {/* <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Image source={require('../../assets/images/kurangInpo.jpg')} style={styles.reactLogo}/>
+          <Text style={{textAlign: 'center', fontSize: 24, fontWeight: 'bold',}}>hehe</Text>
+          <Text style={{textAlign: 'center', fontSize: 19, marginTop: 10, color: 'grey'}}> "Hi mi nem is Fadhlan Putra, ai em manusia, ai em a perogramer, ai em pelajar, ai em pelaying gem, ai em kurang ingpo aku kang 😂😂"</Text>
+          <TextInput placeholder='isi pin atm' style={{borderWidth: 1, marginBottom: 20, marginTop: 20,}}></TextInput>
+          <Button
+            title="Submit"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View> */}
+
+          {/* <Text style={tw`text-bold text-xl mt-5`}>&lt; Profile</Text> */}
+          
+          {/* <View style={tw`items-center`}> */}
+            <ImageBackground style={tw`w-full h-170 mb-150`} source={require('../../assets/images/rusdi.jpg')}>
+
+
+          <View style={tw`bg-yellow-500 rounded-t-3xl mt-140 px-10 h-350`}>
+            <Text style={tw`font-extrabold text-5xl mt-10`}>Rusdi{"\n"}Barbeshop</Text>
+
+            <View style={tw`flex flex-row gap-5`}>
+              <Text>Barber</Text>
+              <Text><Entypo name='location-pin'/>Ngawi</Text>
+            </View>
+
+            <View style={tw`flex flex-row mt-5 justify-between`}>
+              <Text style={tw`font-extrabold text-2xl`}>542</Text>
+              <Text style={tw`font-extrabold text-2xl`}>98K</Text>
+              <Text style={tw`font-extrabold text-2xl`}>100K</Text>
+            </View>
+
+            <View style={tw`flex flex-row justify-between`}>
+              <Text style={tw`text-xl`}>Following</Text>
+              <Text style={tw`text-xl`}>Following</Text>
+              <Text style={tw`text-xl`}>Likes</Text>
+            </View>
+
+            <Link href="/settings/consultation" style={tw`bg-black p-4 rounded w-25 my-8`}>
+              <Text style={tw`text-white font-bold text-center`}>Hire Me</Text>
+            </Link>
+
+            <View style={tw`flex-row mr-10 gap-3 mb-8`}>
+              <Entypo name='facebook' size={30}/>
+              <Entypo name='linkedin' size={30}/>
+              <Entypo name='twitter' size={30}/>
+            </View>
+
+            <Text style={tw`font-extrabold text-3xl`}>Tentang</Text>
+            <Text>Rusdi adalah seorang tukang barbershop</Text>
+
+            <Text style={tw`font-extrabold text-3xl`}>Projects</Text>
+            <Text>Mencukur rambut orang</Text>
+
+            <Text style={tw`font-extrabold text-3xl`}>Tools</Text>
+            <View style={tw`flex flex-row gap-5 mr-1`}>
+              <Text>Alat cukur</Text>
+              <Text>Kaca</Text>
+            </View>
+            
+          </View>
+        
+    </ImageBackground>
+    {/* </View> */}
+
+      </ScrollView>
     </SafeAreaView>
 
     // <ParallaxScrollView
